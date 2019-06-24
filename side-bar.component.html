@@ -1,0 +1,24 @@
+ <nav class="col-2 col-sm-3 col-md-2 col-lg-2 sidebar bg-dark-blue sidebar" [class.minimize-mode]='isMinimizable'>
+  <ul class="nav nav-pills flex-column">
+    <li class="nav-item" >
+      <a  class="nav-link" placement="right" [class.active]="isActive('/dashboard')" routerLink="/dashboard"><fa title="Admin" name="tachometer"></fa><span class="ml-2" >Dashboard</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="isActive('/reports')" routerLink="/reports"><fa title="Reports" name="pie-chart"></fa><span class="ml-2">Reports</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="isActive('/profile')" routerLink="/profile"><fa title="Profile" name="user-circle"></fa><span class="ml-2">Profile</span></a>
+    </li>
+  </ul>
+  <ul class="side-bar-bottom-menu">
+    <li>
+      <button><fa title="Settings" name="cog"></fa></button>
+    </li>
+    <li class="expand-collapse-menu">
+      <button><fa title="Collapse" name="compress"></fa></button>
+    </li>
+    <li>
+      <button><fa title="Sign Out" name="sign-out"></fa></button>
+    </li>
+  </ul>
+</nav>

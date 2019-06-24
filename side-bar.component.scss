@@ -1,0 +1,126 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
+ 
+.sidebar {
+    position: fixed;
+    top: 59px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color:#09365c;
+    .nav {
+        margin-bottom: 20px;
+        .nav-item {
+            width: 100%;
+            .nav-link {
+                border-radius: 0;
+                color: #FFF;
+                fa {
+                    font-size: 25px;
+                }
+                span {
+                    position: relative;
+                    top: -3px;
+                }
+            }
+        }
+    }
+    ul.side-bar-bottom-menu {
+        position: absolute;
+        bottom:0;
+        background: #000;
+        width: 100%;
+        margin: 0;
+        padding: 5px 0px;
+        display: flex;
+        li{
+            list-style: none;
+            flex: 1;
+            text-align: center;
+            button {
+                background: none;
+                border: 0;
+                color: #FFF;
+                cursor: pointer;
+                transition: .2s ease;
+                transform: scale(.9);
+                &:hover {
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+    .side-bar-bottom-menu {
+        position: absolute;
+        bottom:0;
+        background: #000;
+        width: 100%;
+        margin: 0;
+        padding: 5px 0px;
+        display: flex;
+        li{
+            list-style: none;
+            flex: 1;
+            text-align: center;
+        }
+    }
+
+    .side-bar-bottom-menu li{
+        list-style: none;
+        flex: 1;
+        text-align: center;
+        button {
+            background: none;
+            border: 0;
+            color: #FFF;
+            cursor: pointer;
+            transition: .2s ease;
+            transform: scale(.9);
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+    &.minimize-mode {
+        width: 65px;
+        .nav-pills .nav-link {
+            fa {
+                font-size: 30px;
+            }
+            span {
+                display: none;
+            }
+        }
+        ul.side-bar-bottom-menu {
+            display: block;
+            li {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+
+@include media-breakpoint-down(xs) {
+    .sidebar {
+        width: 57px;        
+        ul.side-bar-bottom-menu {
+            display: block;
+            li {
+                &.expand-collapse-menu {
+                    display: none;
+                }
+                font-size: 20px;
+            }
+        }
+        .nav-pills {
+            .nav-link {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
